@@ -1,0 +1,11 @@
+# Build folders
+cvibuild.*/
+msvc/
+
+# Compiled files
+*.exe
+*.dll
+*.lib
+
+# Workspace files
+*.cws
