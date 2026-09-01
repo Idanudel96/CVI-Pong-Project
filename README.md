@@ -1,27 +1,75 @@
-# Pong Game 🏓
+# Pong Game – LabWindows/CVI
 
-## Overview
-A classic arcade Pong game developed in the LabWindows/CVI environment using the C programming language. Developed by Idan Nudel, the game features an interactive graphical interface, realistic ball physics, and real-time score management. The core game logic is modularly separated into a dynamically linked library (DLL).
+A classic Pong game developed in **C using LabWindows/CVI**, with modular game logic separated into a dynamically linked library (DLL).
+
+The project was developed as an academic programming project and focuses on event-driven programming, game-state management, collision handling, keyboard input, GUI interaction, and modular C software design.
 
 ## Features
-* **Game Modes:** Support for Player vs. Computer (AI) and Player vs. Player (1v1) modes.
-* **AI Difficulty Levels:** The computer opponent can be set to Easy, Medium, Hard, or Impossible, which directly affects its reaction speed.
-* **Realistic Physics:** The ball features variable bounce angles based on the impact position relative to the paddle, includes random angle jitter, and gradually increases in speed.
-* **Custom GUI:** Panel-based user interface including a main menu, game mode selection, difficulty selection, and a victory screen.
-* **Win Condition:** The game stops and declares a winner when a player reaches 5 points.
 
-## Controls
-* **Player 1 (Left Paddle):** `Up` and `Down` arrow keys.
-* **Player 2 (Right Paddle):** `W` and `S` keys (in 1v1 mode).
-* **Interface:** On-screen buttons to Pause, Restart, or return to the Main Menu.
+- Player vs. Computer and Player vs. Player game modes
+- Four AI difficulty levels: Easy, Medium, Hard, and Impossible
+- Collision-based ball movement and paddle interaction
+- Variable bounce angles based on paddle impact position
+- Gradual increase in ball speed during gameplay
+- Main menu, game mode selection, difficulty selection, and victory screen
+- Pause, restart, and return-to-menu controls
+- First player to reach 5 points wins
 
-## Project Structure
-* `PongProject.c`: The main application file handling the game loop, canvas drawing, UI events, and real-time keyboard input management.
-* `pong_dll.c` / `pong_dll.h`: The DLL source and header files containing the core math and logic for ball movement, collision detection, and AI behavior.
-* `PongProject.uir`: The LabWindows User Interface Resource file containing the definitions for all graphical panels and controls.
-* `Pong Project - Idan Nudel.pdf`: Complete project documentation and summary.
+## Software Architecture
 
-## How to Run
-1. Download or clone the repository to your local machine.
-2. Open the `PongProject.prj` workspace file using the LabWindows/CVI IDE.
-3. Compile and run the project directly from the development environment.
+The project separates the user interface and application flow from the core gameplay logic.
+
+```text
+LabWindows/CVI Application
+        |
+        |-- UI Panels and Events
+        |-- Keyboard Input
+        |-- Game State Management
+        |-- Canvas Rendering
+        |
+        v
+      Game DLL
+        |
+        |-- Ball Movement
+        |-- Collision Detection
+        |-- AI Paddle Logic
+        |-- Gameplay Calculations
+Project Structure
+PongProject.c – Main application file handling the game loop, UI events, keyboard input, and canvas rendering
+PongProject.h – Main application declarations
+pong_dll.c – Core gameplay logic and calculations
+pong_dll.h – DLL interface and declarations
+PongProject.uir – LabWindows/CVI user interface resource file
+PongProject.prj – LabWindows/CVI project file
+pong_dll.prj – LabWindows/CVI project file for the DLL
+Controls
+Player 1
+Up Arrow – Move paddle up
+Down Arrow – Move paddle down
+Player 2
+W – Move paddle up
+S – Move paddle down
+
+The graphical interface also includes controls for pause, restart, and returning to the main menu.
+
+How to Run
+Clone or download the repository.
+Open PongProject.prj in the LabWindows/CVI IDE.
+Build the project and the DLL.
+Run the application from LabWindows/CVI.
+Technologies
+C
+LabWindows/CVI
+DLL-based modular architecture
+Event-driven GUI programming
+Key Engineering Topics
+
+This project provided hands-on experience with:
+
+Modular C software design
+DLL integration
+Event-driven programming
+Keyboard and UI event handling
+Collision detection and game logic
+Multi-file project organization
+Debugging in LabWindows/CVI
